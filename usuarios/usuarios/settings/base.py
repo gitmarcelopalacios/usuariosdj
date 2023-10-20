@@ -12,6 +12,9 @@ https://docs.djangoproject.com/en/4.2/ref/settings/
 #from pathlib import Path
 
 
+from django.core.exceptions import ImproperlyConfigured
+import json
+
 #import os
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 #BASE_DIR = Path(__file__).resolve().parent.parent
@@ -23,7 +26,17 @@ BASE_DIR = Path(__file__).parent.parent
 # See https://docs.djangoproject.com/en/4.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c#6yx2t5zg0-rv6clk-@dyr3ghy72&254^zg7c)m$2487t0s(*'
+with open("secret.json") as f:
+    secret = json.loads(f.read())
+
+def get_secret(secret_name, secrets=secret):
+    try:
+        return secrets[secret_name]
+    except:
+        msg = "La variable %s no existe" % secret_name
+        raise ImproperlyConfigured(msg)
+
+SECRET_KEY = get_secret('SECRET_KEY')
 
 # Application definition
 
