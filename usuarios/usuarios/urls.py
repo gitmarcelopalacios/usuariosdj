@@ -25,4 +25,7 @@ urlpatterns = [
     path(
         '', 
         include('applications.users.urls')),
+    path(
+        '', 
+        include('applications.home.urls')),
 ]
