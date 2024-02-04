@@ -16,7 +16,7 @@ class UserRegisterForm(forms.ModelForm):
         )
     )
     
-    password = forms. CharField(
+    password2 = forms. CharField(
         label='Contraseña',
         required=True, 
         widget=forms.PasswordInput(
@@ -74,4 +74,23 @@ class LoginForm(forms.Form):
             raise forms.ValidationError('Los datos de usuario no son correctos')
         return self.cleaned_data
     
+class UpdatePasswordForm(forms.Form):    
     
+    password = forms. CharField(
+        label='Contraseña',
+        required=True, 
+        widget=forms.PasswordInput(
+            attrs={
+                'placeholder': 'Contraseña actual'
+            }
+        )
+    )    
+    password1 = forms. CharField(
+        label='Contraseña Nueva',
+        required=True, 
+        widget=forms.PasswordInput(
+            attrs={
+                'placeholder': 'Contraseña Nueva'
+            }
+        )
+    )    
