@@ -76,7 +76,7 @@ class LoginForm(forms.Form):
     
 class UpdatePasswordForm(forms.Form):    
     
-    password = forms. CharField(
+    password1 = forms. CharField(
         label='Contraseña',
         required=True, 
         widget=forms.PasswordInput(
@@ -85,7 +85,7 @@ class UpdatePasswordForm(forms.Form):
             }
         )
     )    
-    password1 = forms. CharField(
+    password2 = forms. CharField(
         label='Contraseña Nueva',
         required=True, 
         widget=forms.PasswordInput(

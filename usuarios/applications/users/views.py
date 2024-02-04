@@ -68,6 +68,7 @@ class UpdatePasswordView(LoginRequiredMixin, FormView):
     form_class = UpdatePasswordForm
     success_url=reverse_lazy('users_app:user-login')
     login_url  =reverse_lazy('users_app:user-login')
+    
     def form_valid(self, form):
         usuario = self.request.user
         user = authenticate(

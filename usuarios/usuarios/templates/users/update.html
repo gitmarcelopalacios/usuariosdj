@@ -7,7 +7,7 @@
 </head>
 <body>
     <h1>Cambiar Contraseña de {{user}}</h1>
-    <form class="post">{% csrf_token %}
+    <form method="post">{% csrf_token %}
         {{ form.as_p }}
         <button type="submit">Actualizar</button>        
     </form>
