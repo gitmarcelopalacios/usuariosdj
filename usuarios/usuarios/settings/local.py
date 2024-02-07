@@ -47,3 +47,14 @@ MEDIA_URL = '/media/'
 #MEDIA_ROOT = BASE_DIR / "media"
 MEDIA_ROOT = BASE_DIR.child("media")
 
+# EMAIL SETTINGS
+EMAIL_USE_TLS = True
+EMAIL_HOST='smtp.gmail.com'
+#EMAIL_HOST_USER='correodemarcelopalacios@gmail.com'
+EMAIL_HOST_USER=get_secret('EMAIL')
+#EMAIL_HOST_PASSWORD='3ntr3m05'
+EMAIL_HOST_PASSWORD=get_secret('PASS_EMAIL')
+EMAIL_PORT=587
+#EMAIL_PORT=465
+
+

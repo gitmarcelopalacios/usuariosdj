@@ -93,4 +93,8 @@ class UpdatePasswordForm(forms.Form):
                 'placeholder': 'Contraseña Nueva'
             }
         )
-    )    
+    )   
+    
+class VerificationForm(forms.Form):
+    codregistro = forms.CharField(required=True)
+         
